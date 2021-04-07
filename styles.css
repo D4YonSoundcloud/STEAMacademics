@@ -1,0 +1,305 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-bottom: 12px;
+    cursor: default;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    cursor: default;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    cursor: default;
+    width: 100%;
+    height: 20%;
+}
+
+.h1-div{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    font-family: Arial, serif;
+    background-color: #3a3a3a;
+    height: 100vh;
+}
+
+.header-div{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-height: 60px;
+}
+
+
+/* navbar styling */
+.tab {
+    overflow: hidden;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    max-height: 75px;
+    background: #262724;
+    min-height: 50px;
+}
+/* buttons inside the navbar */
+.tab button {
+    background-color: inherit;
+    font-family: "Open Sans", sans-serif;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 1em;
+    letter-spacing: 1px;
+    height: 100%;
+    color: #fffffc;
+    min-width: 125px;
+}
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #1d1d1b;
+}
+/* Create an active/current tab link class */
+.tab button.active {
+    border: 1px solid #3d3e3a;
+}
+/* tab content */
+.section-tab-content-hide {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    height: 100%;
+}
+
+.footer{
+    overflow: hidden;
+    border-top: 1px solid #2c2d2a;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    max-height: 65px;
+    background: #262724;
+    min-height: 25px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.section-tab-content-show{
+    display: flex;
+    height: 80%;
+    flex-flow: row wrap;
+    background-color: #3a3a3a;
+}
+
+#more-info{
+    flex-flow: column;
+}
+
+.home-content{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: start;
+    height: 100%;
+}
+.more-info-content-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: start;
+    height: 100%;
+}
+.programs-content-container{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.team-content-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: start;
+    height: 100%;
+}
+.steam-vs-stem-content-container{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.content{
+    padding: 18px 36px;
+    background: #262724;
+    color: white;
+    width: 60%;
+    height: 40%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 0.25%;
+    box-shadow: 0 0 1px 2px #1a1c19;
+}
+
+.more-info-content{
+    padding: 18px 24px;
+    background: #262724;
+    color: white;
+    width: 17.5%;
+    margin-right: 12px;
+    margin-left: 12px;
+    height: 75%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 0.25%;
+    box-shadow: 0 0 1px 2px #1a1c19;
+    text-align: left;
+}
+.programs-content{
+    padding: 18px 24px;
+    background: #262724;
+    color: white;
+    width: 50%;
+    margin-right: 12px;
+    height: 20%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 0.25%;
+    box-shadow: 0 0 1px 2px #1a1c19;
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.team-content{
+    padding: 18px 24px;
+    background: #262724;
+    color: white;
+    width: 25%;
+    margin-right: 12px;
+    margin-left: 12px;
+    height: 30%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 0.25%;
+    box-shadow: 0 0 1px 2px #1a1c19;
+    text-align: left;
+}
+.steam-vs-stem-content{
+    padding: 18px 24px;
+    background: #262724;
+    color: white;
+    width: 50%;
+    margin-right: 12px;
+    height: 35%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 0.25%;
+    box-shadow: 0 0 1px 2px #1a1c19;
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.steam-vs-stem-content-2{
+    padding: 18px 24px;
+    background: #262724;
+    color: white;
+    width: 50%;
+    margin-right: 12px;
+    height: 20%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 0.25%;
+    box-shadow: 0 0 1px 2px #1a1c19;
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.home-link{
+    background-color: inherit;
+    font-family: "Roboto", sans-serif;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 1.25em;
+    letter-spacing: 1px;
+    height: 100%;
+    color: #fffffc;
+    min-width: 125px;
+}
+.home-link:hover{
+    color: #f25f5c;
+}
+
+.home-links-div{
+    margin-top: 2.5%;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
