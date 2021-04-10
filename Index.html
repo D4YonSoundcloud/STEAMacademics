@@ -225,6 +225,13 @@
         <div class="h1-div">
             <h1 class="h1-header"> RESOURCES </h1>
         </div>
+        <div class="resources-content-container">
+            <div class="resource-links-div">
+                <a class="home-link" href="https://artsintegration.com/what-is-steam-education-in-k-12-schools/" @click="goToLink('https://artsintegration.com/what-is-steam-education-in-k-12-schools/')"> What is STEAM Education? </a>
+                <a class="home-link" href="https://steamedu.com/" @click="goToLink('https://steamedu.com/')"> steamedu.com </a>
+                <a class="home-link" href="https://steamedu.com/programs/certification-training/" @click="goToLink('https://steamedu.com/programs/certification-training/')"> STEAM Certification Training </a>
+            </div>
+        </div>
     </section>
 
     <!-- footer, add info here -->
@@ -258,12 +265,15 @@
 
         },
         methods:{
-           showTab(tabToGo, tabsToClose){
+            showTab(tabToGo, tabsToClose){
            	    this[tabToGo] = true;
            	    for(const tab of tabsToClose) {
 	                this[tab] = false;
                 }
-           }
+            },
+            goToLink(link){
+                window.location.href = link;
+            }
         },
 	})
 </script>
