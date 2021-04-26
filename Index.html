@@ -19,12 +19,12 @@
 
     <!-- navbar -->
     <div class="tab">
-        <button class="tab-link" @click="showTab('showHome', ['showPrograms', 'showTeam', 'showSTEAMvsSTEM', 'showResources','showMoreInfo'])">HOME</button>
-        <button class="tab-link" @click="showTab('showMoreInfo', ['showPrograms', 'showTeam', 'showSTEAMvsSTEM', 'showResources','showHome'])">INFO</button>
-        <button class="tab-link" @click="showTab('showPrograms', ['showHome', 'showTeam', 'showSTEAMvsSTEM', 'showResources','showMoreInfo'])">PROGRAMS</button>
-        <button class="tab-link" @click="showTab('showTeam', ['showPrograms', 'showHome', 'showSTEAMvsSTEM', 'showResources','showMoreInfo'])">TEAM</button>
-        <button class="tab-link" @click="showTab('showSTEAMvsSTEM', ['showPrograms', 'showTeam', 'showHome', 'showResources','showMoreInfo'])">STEAM vs STEM</button>
-        <button class="tab-link" @click="showTab('showResources', ['showPrograms', 'showTeam', 'showSTEAMvsSTEM', 'showHome','showMoreInfo'])">RESOURCES</button>
+        <button class="tab-link" @click="showTab('showHome', ['showPrograms', 'showTeam', 'showSTEAMvsSTEM', 'showResources','showMoreInfo'], 'home')">HOME</button>
+        <button class="tab-link" @click="showTab('showMoreInfo', ['showPrograms', 'showTeam', 'showSTEAMvsSTEM', 'showResources','showHome'], 'more-info')">INFO</button>
+        <button class="tab-link" @click="showTab('showPrograms', ['showHome', 'showTeam', 'showSTEAMvsSTEM', 'showResources','showMoreInfo'], 'programs')">PROGRAMS</button>
+        <button class="tab-link" @click="showTab('showTeam', ['showPrograms', 'showHome', 'showSTEAMvsSTEM', 'showResources','showMoreInfo'], 'team')">TEAM</button>
+        <button class="tab-link" @click="showTab('showSTEAMvsSTEM', ['showPrograms', 'showTeam', 'showHome', 'showResources','showMoreInfo'], 'steam-vs-stem')">STEAM vs STEM</button>
+        <button class="tab-link" @click="showTab('showResources', ['showPrograms', 'showTeam', 'showSTEAMvsSTEM', 'showHome','showMoreInfo'], 'resources')">RESOURCES</button>
     </div>
     <!-- home -->
     <section :class="showHome ? 'section-tab-content-show' : 'section-tab-content-hide' + ' tab'" id="home">
@@ -44,11 +44,11 @@
                 </p>
             </div>
             <div class="home-links-div">
-                <button class="home-link" @click="showTab('showMoreInfo', ['showPrograms', 'showTeam', 'showSTEAMvsSTEM', 'showResources','showHome'])"> INFO </button>
-                <button class="home-link" @click="showTab('showPrograms', ['showHome', 'showTeam', 'showSTEAMvsSTEM', 'showResources','showMoreInfo'])"> PROGRAMS </button>
-                <button class="home-link" @click="showTab('showTeam', ['showPrograms', 'showHome', 'showSTEAMvsSTEM', 'showResources','showMoreInfo'])"> TEAM </button>
-                <button class="home-link" @click="showTab('showSTEAMvsSTEM', ['showPrograms', 'showTeam', 'showHome', 'showResources','showMoreInfo'])"> STEAM vs STEM</button>
-                <button class="home-link" @click="showTab('showResources', ['showPrograms', 'showTeam', 'showSTEAMvsSTEM', 'showHome','showMoreInfo'])"> RESOURCES</button>
+                <button class="home-link" @click="showTab('showMoreInfo', ['showPrograms', 'showTeam', 'showSTEAMvsSTEM', 'showResources','showHome'], 'home')"> INFO </button>
+                <button class="home-link" @click="showTab('showPrograms', ['showHome', 'showTeam', 'showSTEAMvsSTEM', 'showResources','showMoreInfo'], 'more-info')"> PROGRAMS </button>
+                <button class="home-link" @click="showTab('showTeam', ['showPrograms', 'showHome', 'showSTEAMvsSTEM', 'showResources','showMoreInfo'], 'programs')"> TEAM </button>
+                <button class="home-link" @click="showTab('showSTEAMvsSTEM', ['showPrograms', 'showTeam', 'showHome', 'showResources','showMoreInfo'], 'steam-vs-stem')"> STEAM vs STEM</button>
+                <button class="home-link" @click="showTab('showResources', ['showPrograms', 'showTeam', 'showSTEAMvsSTEM', 'showHome','showMoreInfo'], 'resources')"> RESOURCES</button>
             </div>
         </div>
     </section>
@@ -260,16 +260,30 @@
             showTeam: false,
             showSTEAMvsSTEM: false,
             showResources: false,
+            currentPage: 'home',
 		},
         computed:{
 
         },
         methods:{
-            showTab(tabToGo, tabsToClose){
-           	    this[tabToGo] = true;
-           	    for(const tab of tabsToClose) {
-	                this[tab] = false;
-                }
+            showTab(tabToGo, tabsToClose, elementToOpenId){
+            	console.log(this.currentPage);
+                document.getElementById(this.currentPage).classList.toggle('hide-transition')
+                setTimeout(() => {
+	                for(const tab of tabsToClose) {
+		                this[tab] = false;
+	                }
+	                this[tabToGo] = true;
+	                // setTimeout(() => {
+		            //     gsap.to(`#${elementToOpenId}`, {
+			        //         x: 0,
+			        //         opacity: 1,
+			        //         duration: 0.2,
+			        //         ease: "power1"
+		            //     })
+                    // }, 100)
+                    this.currentPage = elementToOpenId
+                }, 200)
             },
             goToLink(link){
                 window.location.href = link;
